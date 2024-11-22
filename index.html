@@ -3,11 +3,73 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Synthesizing Complex Visual Reasoning Context Using Language Model">
-  <meta name="keywords" content="Multimodal Self-Instruct">
+  <meta name="description" content="A Multimodal Textbook for Vision-Language Pretraining">
+  <meta name="keywords" content="Multimodal Textbook">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Multimodal Self-Instruct: Synthesizing Complex Visual Reasoning Context
-    Using Language Modelv</title>
+  <title> 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining</title>
+  <style>
+    /* 设置全局字体 */
+    * {
+      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+    }
+    
+    /* 特别设置标题样式，保持原有粗细但使用相同字体 */
+    .title {
+      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+      font-weight: 700;  /* 保持标题粗体 */
+    }
+    
+    .subtitle {
+      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+      font-weight: 500;  /* 副标题稍微淡一些 */
+    }
+    /* 全局基础字体大小 */
+    html {
+      font-size: 20px;  /* 设置基础字体大小 */
+    }
+
+    /* 主标题 */
+    .title.is-1 {
+      font-size: 2.5rem !important;  /* 40px */
+    }
+
+    /* 副标题 */
+    .subtitle.is-3 {
+      font-size: 1.75rem !important;  /* 28px */
+    }
+
+    /* 作者名称和机构 */
+    .author-name {
+      font-size: 1.4rem !important;  /* 20px */
+    }
+    .author-institution {
+      font-size: 1.2rem !important;  /* 16px */
+    }
+
+    /* 正文内容 */
+    p, .content {
+      font-size: 1.4rem !important;  /* 16px */
+      line-height: 1.4 !important;  /* 行高 */
+    }
+
+    /* 章节标题 */
+    .section-title {
+      font-size: 1.5rem !important;  /* 24px */
+    }
+
+    /* 响应式设计 - 在小屏幕上调整大小 */
+    @media screen and (max-width: 768px) {
+      .title.is-1 {
+        font-size: 2rem !important;  /* 32px */
+      }
+      .subtitle.is-3 {
+        font-size: 1.5rem !important;  /* 24px */
+      }
+      .author-name {
+        font-size: 1.1rem !important;  /* 17.6px */
+      }
+    }
+  </style>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
@@ -85,49 +147,44 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <span class="model" style="vertical-align: middle">Multimodal Self-Instruct</span>
+              <span class="model" style="vertical-align: middle">Multimodal Textbook</span>
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-              Synthetic Abstract Image and Visual Reasoning Instruction Using Language Model
+              2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
             </h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a>Wenqi Zhang</a>,
               </span>
               <span class="author-block">
-                <a>Zhenglin Cheng</a>,
+                <a>Hang Zhang</a>,
               </span>
               <span class="author-block">
-                <a>Yuanyu He</a>,
+                <a>Xin Li</a>,
               </span>
               <span class="author-block">
-                <a>Mengna Wang</a>,
+                <a>Jiashuo Sun</a>,
               </span>
               <span class="author-block">
                 <a>Yongliang Shen</a>,
               </span>
               <span class="author-block">
-                <a>Zeqi Tan</a>,
-              </span>
-              <span class="author-block">
-                <a>Guiyang Hou</a>,
-              </span>
-              <span class="author-block">
-                <a>Mingqian He</a>,
-              </span>
-              <span class="author-block">
-                <a>Yanna Ma</a>,
-              </span>
-              <span class="author-block">
                 <a>Weiming Lu</a>,
               </span>
               <span class="author-block">
-                <a>Yueting Zhuang,
+                <a>Deli Zhao</a>,
+              </span>
+              <span class="author-block">
+                <a>Yueting Zhuang</a>,
+              </span>
+              <span class="author-block">
+                <a>Lidong Bing</a>,
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">Zhejiang University</span><br>
+              <span class="author-block">DAMO Academy, Alibaba Group</span><br>
             </div>
 
             <!-- <section> -->
@@ -181,9 +238,9 @@
                   <a href="https://multi-modal-self-instruct.github.io/#leaderboard"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <p style="font-size:18px">🏆</p>
+                      <p style="font-size:18px">📰</p>
                     </span>
-                    <span>Leaderboard</span>
+                    <span>Media</span>
                   </a>
                 </span>
               </div>
@@ -201,28 +258,9 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            Although most current large multimodal models (LMMs) can already understand photos of
-            natural scenes and portraits, their understand
-            ing of abstract images, e.g., charts, maps, or
-            layouts, and visual reasoning capabilities remains quite rudimentary. They often struggle
-            with simple daily tasks, such as reading time
-            from a clock, understanding a flowchart, or
-            planning a route using a road map. In light
-            of this, we design a multi-modal self-instruct,
-            utilizing large language models and their code
-            capabilities to synthesize massive abstract images and visual reasoning instructions across
-            daily scenarios. Our strategy effortlessly <b>creates a multimodal benchmark with 11,193 instructions for
-              eight visual scenarios: charts, tables, simulated maps, dashboards, flowcharts,
-              relation graphs, floor plans, and visual puzzles.</b>
-            This benchmark, constructed with simple
-            lines and geometric elements, exposes the
-            shortcomings of most advanced LMMs like
-            GPT-4V and Llava in abstract image understanding, spatial relations reasoning, and visual
-            element induction. Besides, to verify the quality of our synthetic data, we fine-tune an LMM
-            <b>using 62,476 synthetic chart, table and road
-              map instructions.</b> The results demonstrate improved chart understanding and map navigation
-            performance, and also demonstrate potential
-            benefits for other visual reasoning tasks.
+            Compared to image-text pair data, interleaved corpora enable Vision-Language Models (VLMs) to understand the world more naturally like humans. However, such existing datasets are crawled from webpage, facing challenges like low knowledge density, loose image-text relations, and poor logical coherence between images. 
+            On the other hand, the internet hosts vast instructional videos (e.g., online geometry courses) that are widely used by humans to learn foundational subjects, yet these valuable resources remain underexplored in VLM training. In this paper, we introduce a high-quality \textbf{multimodal textbook} corpus with richer foundational knowledge for VLM pretraining. It collects over 2.5 years of instructional videos, totaling 22,000 class hours. We first use an LLM-proposed taxonomy to systematically gather instructional videos. Then we progressively extract and refine visual (keyframes), audio (ASR), and textual knowledge (OCR) from the videos, and organize as an image-text interleaved corpus based on temporal order.
+            Compared to its counterparts, our video-centric textbook offers more coherent context, richer knowledge, and better image-text alignment. Experiments demonstrate its superb pretraining performance, particularly in knowledge- and reasoning-intensive tasks like ScienceQA and MathVista. Moreover, VLMs pre-trained on our textbook exhibit outstanding interleaved context awareness, leveraging visual and textual cues in their few-shot context for task solving.
           </div>
         </div>
       </div>
@@ -720,10 +758,10 @@
       <div class="columns is-centered has-text-centered">
         <!-- <div class="column is-full-width has-text-centered"> -->
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Introduction</h2>
+          <h2 class="title is-3" style="font-size: 2rem !important;">Introduction</h2>
           <div class="images_container_horizontal2">
             <img src="static/images/examples/Table1.png" width="50%">
-            <div class="has-text-justified">
+            <div class="has-text-justified" style="font-size: 1.5rem !important;">
               We identify that current LMMs have a significant gap compared to humans in understanding and visually
               reasoning about abstract images, such as maps, charts, and layouts. Utilizing LLM and code, We design a
               multimodal self-instruct strategy to synthesize a diverse set of abstract images and reasoning
