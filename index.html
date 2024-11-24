@@ -6,26 +6,26 @@
   <meta name="description" content="A Multimodal Textbook for Vision-Language Pretraining">
   <meta name="keywords" content="Multimodal Textbook">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining</title>
+  <title>2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining</title>
   <style>
     /* 设置全局字体 */
     * {
-      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+      font-family: Helvetica, Arial, sans-serif !important;
     }
     
     /* 特别设置标题样式，保持原有粗细但使用相同字体 */
     .title {
-      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+      font-family: Helvetica, Arial, sans-serif !important;
       font-weight: 700;  /* 保持标题粗体 */
     }
     
     .subtitle {
-      font-family: "Times New Roman", TimesNewRoman, "PingFang SC", "SimSun", serif !important;
+      font-family: Helvetica, Arial, sans-serif !important;
       font-weight: 500;  /* 副标题稍微淡一些 */
     }
     /* 全局基础字体大小 */
     html {
-      font-size: 20px;  /* 设置基础字体大小 */
+      font-size: 16px;  /* 设置基础字体大小 */
     }
 
     /* 主标题 */
@@ -48,7 +48,7 @@
 
     /* 正文内容 */
     p, .content {
-      font-size: 1.4rem !important;  /* 16px */
+      font-size: 1.3rem !important;  /* 16px */
       line-height: 1.4 !important;  /* 行高 */
     }
 
@@ -68,6 +68,30 @@
       .author-name {
         font-size: 1.1rem !important;  /* 17.6px */
       }
+    }
+
+    /* 添加标题背景样式 */
+    .hero {
+      background-image: url('static/images/logo.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.3); /* 白色半透明遮罩 */
+      z-index: 1;
+    }
+
+    .hero-body {
+      position: relative;
+      z-index: 2;
     }
   </style>
 
@@ -139,6 +163,8 @@
 
     </div>
   </nav>
+  
+
 
 
   <section class="hero">
@@ -147,10 +173,10 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <span class="model" style="vertical-align: middle">Multimodal Textbook</span>
+              <img src="static/images/apala_reading.webp" alt="Logo" style="height: 2.5em; margin-right: 0.5em; vertical-align: middle; opacity: 1; border-radius: 10px;"><span class="model" style="vertical-align: middle">Multimodal Textbook</span>
             </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-              2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
+              <strong>2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining</strong>
             </h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -251,654 +277,482 @@
     </div>
   </section>
 
-
   <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video-to-Textbook</h2>
+          <div class="content">
+            <!-- 视频容器 -->
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+              <!-- 本地视频 -->
+              <video 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="static/videos/fig1.mp4"
+                autoplay="autoplay"
+                muted
+                title=""
+                controls
+                loop>
+              </video>
+            </div>
+            
+            <!-- 视频描述文字 -->
+            <div class="content has-text-justified" style="margin-top: 2rem;">
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" style="margin-top: -50px;">
     <div class="container" style="margin-bottom: 2vh;">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             Compared to image-text pair data, interleaved corpora enable Vision-Language Models (VLMs) to understand the world more naturally like humans. However, such existing datasets are crawled from webpage, facing challenges like low knowledge density, loose image-text relations, and poor logical coherence between images. 
-            On the other hand, the internet hosts vast instructional videos (e.g., online geometry courses) that are widely used by humans to learn foundational subjects, yet these valuable resources remain underexplored in VLM training. In this paper, we introduce a high-quality \textbf{multimodal textbook} corpus with richer foundational knowledge for VLM pretraining. It collects over 2.5 years of instructional videos, totaling 22,000 class hours. We first use an LLM-proposed taxonomy to systematically gather instructional videos. Then we progressively extract and refine visual (keyframes), audio (ASR), and textual knowledge (OCR) from the videos, and organize as an image-text interleaved corpus based on temporal order.
+            On the other hand, the internet hosts vast instructional videos (e.g., online geometry courses) that are widely used by humans to learn foundational subjects, yet these valuable resources remain underexplored in VLM training. In this paper, we introduce a <span style="color: red;">high-quality multimodal textbook corpus</span> with richer foundational knowledge for VLM pretraining. It collects over <span style="color: rgb(0, 0, 0);">2.5 years of instructional videos, totaling 22,000 class hours</span>. We first use an LLM-proposed taxonomy to systematically gather instructional videos. Then we progressively extract and refine visual (keyframes), audio (ASR), and textual knowledge (OCR) from the videos, and organize as <span style="color: red;">an image-text interleaved corpus based on temporal order</span>.
             Compared to its counterparts, our video-centric textbook offers more coherent context, richer knowledge, and better image-text alignment. Experiments demonstrate its superb pretraining performance, particularly in knowledge- and reasoning-intensive tasks like ScienceQA and MathVista. Moreover, VLMs pre-trained on our textbook exhibit outstanding interleaved context awareness, leveraging visual and textual cues in their few-shot context for task solving.
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section class="section">
-    <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
-      <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <img src="static/images/examples/UpdatedPer.jpg" alt="geometric reasoning" width="70%" />
-              </div>
-              <div class="has-text-justified">
-                We leverage LLM and code to synthesize abstract images and self-instruct diverse reasoning instructions,
-                e.g., charts, road maps, dashboards, visual puzzles, and relation graphs. Unlike natural landscapes and
-                human photos, these non-natural images constructed with geometric elements require stronger perception
-                and spatial relation reasoning. Our benchmark indicates that current LMMs are far from human-level
-                performance. They even fail to complete simple daily tasks, e.g., reading the time on a clock or
-                planning a route using a map.
-
-              </div>
+    <div class="container" style="margin-top: -150px; margin-bottom: -50px;">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="box">
+            <div class="content has-text-centered">
+              <img src="static/images/fig1.png" alt="Multimodal Textbook" width="100%" />
             </div>
-            <div class="box m-5"7>
-              <div class="content">
-                <div class="has-text-centered">
-                  <h3>
-                    Chart
-                  </h3>
-                  <div class="images_container_horizontal">
-                    <div class="images_container_vertical">
-                      <img src="static/images/examples/ChartExamples/PieChart.png" alt="arithmetic reasoning"
-                        width="100%" />
-                      <div class="has-text-justified">
-                        <p>
-                          "Q": "Which country has the highest Happiness Index?",
-                          <br>
-                          "A": "Finland"
-                        </p>
-                        <p>
-                          <span style="font-weight: bold;">Llava-v1.6-34b:</span> Finland <span
-                            style="color: red;">✔</span>
-                          <br>
-                          <span style="font-weight: bold;">Gemini-1.5-pro:</span> Finland <span
-                            style="color: red;">✔</span>
-                          <br>
-                          <span style="font-weight: bold;">GPT-4V:</span> Finland <span style="color: red;">✔</span>
-                          <br>
-                          <span style="font-weight: bold;">GPT-4o:</span> Finland <span style="color: red;">✔</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="images_container_vertical">
-                      <img src="static/images/examples/ChartExamples/LineChart.jpg" alt="algebraic reasoning"
-                        width="100%" />
-                      <div class="has-text-justified column is-four-fifths">
-                        <p>
-                          "Q": "What is the difference between the highest and lowest energy production from natural
-                          gas?",
-                          <br>
-                          "A": "14.6 Quadrillion Btu",
-                          <br>
-                          "Rationale": "... subtract the smallest value from the largest... 38.4 - 23.8 = 14.6
-                          Quadrillion Btu"
-                        </p>
-                        <p>
-                          <span style="font-weight: bold;">Gemini-1.5-pro:</span> highest … approximately 38. lowest …
-                          approximately 24… The difference is approximately 14 …<span style="color: green;">✔</span>
-                          <br>
-                          <span style="font-weight: bold;">GPT-4o:</span> The highest…approximately 44, and the
-                          lowest…about 22. the difference … approximately 22 <span style="color: red;">✗</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Table
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/ChartExamples/Table.png" alt="geometric reasoning" width="50%" />
-                    <div class="has-text-justified">
-                      <p>
-                        "Q": "Please extract the chart's title."
-                        <br>
-                        "A": "Annual global food waste from 2000 to 2020"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> Annual global food waste from 2000 to
-                        2020
-                        <span style="color: orange;">(millions of tonnes)</span> <span style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> Annual global food waste from 2000 to
-                        2020<span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> Annual global food waste from 2000 to 2020<span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> Annual global food waste from 2000 to 2020<span
-                          style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/ChartExamples/BarChart.png" alt="logical reasoning" width="200%" />
-                    <div class="has-text-justified">
-                      <p>
-                        "Q": "How many different coloured bars are there?"
-                        <br>
-                        "A": "5"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> 5 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> 5 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> five <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> five <span style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Relation Graph
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/MapExamples/Connectivity1.png" width="95%" />
-                    <div class="has-text-justified column is-four-fifths">
-                      <p>
-                        " Q": "Which city has the most directly reachable neighboring cities?" <br>
-                        "A": "City 6"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> City 1 has the most directly reachable
-                        neighboring cities. It is connected to City 2, City 3, City 5, City 6, and City 7. <span
-                          style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> City 6 <span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> City 6 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> City 6 <span style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/MapExamples/Relation1.png" alt="geometric reasoning" width="87%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <strong>Question:</strong> Do Stellar Orbits and Particle Models belong to the same
-                        sub-disciplines?
-                        <br>
-                        <strong>Answer:</strong> No.
-                      </p>
-                      <p>
-                        <strong>Rationale:</strong> Particle Models are a sub subfield of Dark Matter, while Stellar
-                        Orbits fall under Galactic Dynamics.
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> Yes, Stellar Orbits and Particle Models
-                        belong to the same sub-disciplines within the field of astrophysics … <span
-                          style="color: red;">✗</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Road Map
-                </h3>
-                <div class="images_container_vertical">
-                  <div class="images_container_horizontal2">
-                    <img src="static/images/examples/MapExamples/Map1.png" width="30%" />
-                    <img src="static/images/examples/MapExamples/Map2.png" width="30%" />
-                  </div>
-                  <div class="has-text-justified is-four-fifths column">
-                    <p>
-                      <span style="font-weight: bold;">Llava-v1.6-34b:</span> Move up until … "t2” … Move right until …
-                      "m2" Move down until …"5k". Move left until…"L5" … Move down reach…"L4"… <span
-                        style="color: green;">✔</span> <span style="color: red;">Score = 1/1</span>
-                      <br>
-                      <span style="font-weight: bold;">Gemini-1.5-pro:</span> Move right until … "m2" Move right until…
-                      "8e" Move downwards until …"5K" Move downwards until …"L5" Move downwards until "L4" … end point.
-                      <span style="color: red;">✗</span> <span style="color: red;">Score = 0.7/1</span>
-                      <br>
-                      <span style="font-weight: bold;">GPT-4V:</span> Move upwards until … "t2"…move right reach …"m2" …
-                      Move downwards reach "7B" … Move right…Move downwards … reach "L4" <span
-                        style="color: red;">✗</span> <span style="color: red;">Score = 0.7/1</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Visual Puzzle
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Puzzle1.png" alt="geometric reasoning" width="80%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <span style="font-weight: bold;">&#9650; Question:</span> Observe the image. <span
-                          style="color: red;">Are all the images identical?</span>
-                        <br>
-                        <span style="font-weight: bold;">Answer:</span> No. <span
-                          style="font-weight: bold;">Rationale:</span> The cat in row 4 and column 4 is different …
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">GPT-4V:</span> No, …unique cat is located in the fourth row and
-                        third column from the top left corner. <span style="color: red;">✗</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Puzzle2.png" alt="geometric reasoning" width="180%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <span style="font-weight: bold;">&#9650; Question:</span> Select an option to fill?
-                        <br>
-                        <span style="font-weight: bold;">Answer:</span> B. The sides are decreasing…
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> …without more clear pattern difficult to
-                        predict … <span style="color: red;">✗</span>
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Layout
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/RocketDiagram.png" width="30%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <span style="font-weight: bold;">Q:</span> "How many fins does it have?"
-                        <br>
-                        <span style="font-weight: bold;">A:</span> "2"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> three fins at the base <span
-                          style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> 2 fins <span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> four <span style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> four <span style="color: red;">✗</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Layout.jpg" width="40%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <span style="font-weight: bold;">Question:</span> <span style="color: red;">Does the smallest
-                          bedroom have a washroom?</span>
-                        <br>
-                        <span style="font-weight: bold;">Answer:</span> No.
-                        <br>
-                        <span style="font-weight: bold;">Rationale:</span> The smallest bedroom is BedRoom1, and it does
-                        not have a washroom.
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">GPT-4V:</span> Yes. Bedroom2.. <span
-                          style="color: red;">✗</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered">
-                <h3>
-                  Dashboard
-                </h3>
-                <div class="images_container_vertical">
-                  <div class="images_container_horizontal2">
-                    <img src="static/images/examples/Dashboard1.jpg" width="43%" />
-                    <img src="static/images/examples/Dashboard2.jpg" width="40%" />
-                  </div>
-                  <div class="has-text-justified is-four-fifths column">
-                    <p>
-                      <span style="font-weight: bold;">Question:</span> Today, I set off for another city 100 kilometers
-                      away. The clock shows my departure time, and the speedometer displays my car's speed. <span
-                        style="color: red;">When will I arrive at the destination?</span>
-                      <br>
-                      <span style="font-weight: bold;">Answer:</span> 10:00 AM.
-                      <br>
-                      <span style="font-weight: bold;">Rationale:</span> Your departure time is 8:00 AM, and your car's
-                      speedometer shows 50 km/h. The distance is 100 km. Therefore, you need to spend two hours on the
-                      road, and you will arrive at the destination at 10:00 AM.
-                    </p>
-                    <p>
-                      <span style="font-weight: bold;">GPT-4V:</span> You will arrive at 9:00. The clock shows 7:00,
-                      which is your departure time.. <span style="color: red;">✗</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="box m-5">
-              <div class="content has-text-centered ">
-                <h3>
-                  2D Planner Layout
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Instrument2.png" width="100%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <br>
-                        <span style="font-weight: bold;">Q:</span> "What is the reading at the beginning of the
-                        rectangle's length?"
-                        <br>
-                        <span style="font-weight: bold;">A:</span> "2"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> 0 <span style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> 2 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> 2 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> 2 <span style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Instrument.png" width="120%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <br>
-                        <span style="font-weight: bold;">Q:</span> "What is the reading at the beginning of the
-                        rectangle's length?"
-                        <br>
-                        <span style="font-weight: bold;">A:</span> "2"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> 0 <span style="color: red;">✗</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> 2 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> 2 <span style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> 2 <span style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="box m-5">
-              <div class="content has-text-centered ">
-                <h3>
-                  Flowchart
-                </h3>
-                <div class="images_container_horizontal">
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/Workflow.png" alt="geometric reasoning" width="55%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <br>
-                        <span style="font-weight: bold;">Q:</span> "What is the previous step of 'Clean up'? A. Blend
-                        until smooth B. Taste and adjust C. Pour and serve D. None of the above"
-                        <br>
-                        <span style="font-weight: bold;">A:</span> "C. Pour and serve"
-                      </p>
-                      <p>
-                        <span style="font-weight: bold;">Llava-v1.6-34b:</span> Pour and serve <span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">Gemini-1.5-pro:</span> Pour and serve <span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4V:</span> Pour and serve <span
-                          style="color: green;">✔</span>
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> Pour and serve <span
-                          style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="images_container_vertical">
-                    <img src="static/images/examples/FlowChart.png" width="200%" />
-                    <div class="has-text-justified">
-                      <p>
-                        <br>
-                        <span style="font-weight: bold;">Question:</span> According to this flowchart, I input the
-                        numbers 2, 3, and 4. <span style="color: red;">What is the final result?</span>
-                        <br>
-                        <span style="font-weight: bold;">Answer:</span> 4. <span
-                          style="font-weight: bold;">Rationale:</span> This algorithm flowchart is designed to find the
-                        maximum of three numbers.
-                        <br>
-                        <span style="font-weight: bold;">GPT-4o:</span> C, which is 4, is the maximum value. Start with
-                        the comparison A > B (2 > 3), which is false... <span style="color: green;">✔</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="has-text-justified">
+              <i>Previous interleaved datasets, e.g., MMC4 and OBELICS, suffer from limitations like weak text-image relations, low knowledge density, and incoherent image sequences. Our multimodal textbook, sourced from massive tutorial videos, employs coarse-to-fine knowledge extraction and multi-level filtering to create a high-quality, textbook-level dataset. It interleaves video keyframes with tutorial texts (extracted from ASR and OCR), enabling VLMs to acquire rich knowledge through tightly coupled text-image and more coherent logic.</i>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
+
+  
+  
+  
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Curation of Multimodal Textbook</h2>
+          <div class="content has-text-justified">
+            In this paper, we introduce a multimodal Textbook: a high-quality pre-training corpus that encompasses a wealth of foundational knowledge. Our textbook is constructed from 2.5 years of instructional videos, amounting to 22,000 class hours, covering six fundamental subjects, including mathematics, physics, and others. The whole corpus is presented in an image-text interleaved format, where the text and images are more closely aligned, and the logical relations between images are also more coherent.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <div class="box">
+            <div class="content has-text-centered">
+              <img src="static/images/fig2.png" alt="Multimodal Textbook" width="100%" />
+            </div>
+            <div class="has-text-justified">
+              <i>An illustration of constructing a multimodal textbook from instructional videos. We first instruct LLMs to construct a knowledge taxonomy, then retrieve and filter videos at metadata level, collecting 159K instructional videos. Then a video-to-textbook pipeline is designed for multi-level knowledge extraction. We filter out non-instructional videos using ASR transcripts, retaining 75K high-quality videos. We use ASR's timestamp to segment long videos into short clips, discarding those with misaligned visuals and ASR. We detect keyframes from each clip and extract text and symbols by OCR. Our pipeline produces 6.5M keyframes, 259M ASR, and 500M OCR tokens and organizes them into an image-text interleaved textbook.</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+
+          <div class="content has-text-justified">
+            <ul>
+              <li><strong>An LLM-powered Pipeline for Automatically Collecting Instructional Videos:</strong> We first prompt LLMs to construct a knowledge taxonomy covering six subjects and 3900 knowledge points. Then based on this, we gather relevant instructional videos.</li>
+              <li><strong>A Video-to-Textbook Pipeline:</strong> we design a multi-level, coarse-to-fine knowledge extraction and data filtering pipeline for these collected videos:
+                <ul>
+                  <li>From a visual perspective, we extract keyframes and recognition text, symbols, and formulas (OCR).</li>
+                  <li>From an auditory perspective, we perform automatic speech recognition (ASR) on the instructor's verbal explanations and refine their quality.</li>
+                  <li>The keyframes and tutorial text are organized into an interleaved format, sequenced chronologically.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="content has-text-justified">
+            Our textbook is an openly accessible pre-training dataset with high-quality 6.5 million images interleaving with 0.75 billion texts. It drawn from 75,000 extensive instructional videos, totoaling over 22000 class hours, covering multiple core subjects such as mathematics, physics, chemistry. Our textbook (the first example) presents three keyframes interleaved with four tutorial texts to dynamically illustrate the geometric concept of complementary angles. These more coherent interleaved context and better-aligned image-text sequences enable VLMs to better grasp foundational knowledge during the pretraining. 
+          </div> 
+        </div>
+      </div>
+  </section>
+
 
   <section class="section">
     <div class="container">
-
-      <div class="columns is-centered">
-        <div class="column is-full has-text-centered content">
-          <h2 class="title is-3" id="leaderboard_title">Leaderboard on Our Benchmark-11k </h2>
-
-          <div class="has-text-justified">
-            <p>
-              We evaluate the performance of many representative LMMs using our benchmark containing all tasks . We
-              observe that for these abstract images, even advanced LMMs like GPT-4V and Claude3 achieved only 49.5%
-              and
-              50.1% accuracy on average for all tasks, leaving a significant gap to human-level performance (82.1%).
-
-            </p>
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Pretraining with Multimodal Textbook</h2>
+          <div class="content has-text-justified">
+            We first employ LLaVA-1.5-7B as base models to study the pretraining performance on our dataset and reference datasets (MMC4, OBELICS). For LLaVA-1.5-7B, we apply continual pretraining on its pre-trained model (aligned using 558K paired data). To investigate our dataset more comprehensively, we also pre-train Idefics2-8B model on our dataset, which is an advanced VLM that already supports multi-image and interleaved format input. For the Idefics2-8B, we design two pretraining settings: 1. Training from scratch using the architecture of Idefics2-8B (i.e., Idefics2-8B with randomly initialized projector) and 2. Continual pretraining from the Idefics2-8B-base which is already pre-trained on OBELICS. For a fair comparison, we sample an equivalent number of samples (610K) from MMC4 and OBELICS and apply the same training parameters across all datasets. 
           </div>
-          <div class="content">
-            <table id="leaderboard">
+
+          <div class="content has-text-centered">
+            <table style="margin: 0 auto; border-collapse: collapse; font-size: 0.8em;">
               <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>Chart</th>
-                  <th>Table</th>
-                  <th>Road Map</th>
-                  <th>Dashboard</th>
-                  <th>Relation Graph</th>
-                  <th>Flowchart</th>
-                  <th>Visual Puzzles</th>
-                  <th>Layout</th>
-                  <th><b class="best-score-text">Avg</b></th>
+                <tr style="border-bottom: 1pt solid black;">
+                  <th style="padding: 6px;">Shots</th>
+                  <th style="padding: 6px;">0</th><th>1</th><th>2</th><th>4</th>
+                  <th style="padding: 6px;">0</th><th>1</th><th>2</th><th>4</th>
+                  <th style="padding: 6px;">0</th><th>1</th><th>2</th><th>4</th>
+                  <th style="padding: 6px;">0</th><th>1</th><th>2</th><th>4</th>
                 </tr>
-                <tr>
-                  <th>-</th>
-                  <th>Human*</th>
-                  <th>93.5</th>
-                  <th>95.1</th>
-                  <th>75</th>
-                  <th>85.3</th>
-                  <th>82.5</th>
-                  <th>65.5</th>
-                  <th>62.5</th>
-                  <th>97.6</th>
-                  <th>82.1</th>
+                <tr style="border-top: 2pt solid black;">
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;">Datasets</th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="4">ScienceQA<sup>IMG</sup></th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="4">OKVQA</th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="4">TextVQA</th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="4">TextVQA<sup>ocr</sup></th>
                 </tr>
               </thead>
               <tbody>
-                <!--leaderboard.json-->
+                <tr>
+                  <td style="padding: 6px;">MMC4</td>
+                  <td>-</td><td>1.6</td><td>3.9</td><td>11.6</td>
+                  <td>8.6</td><td>23.6</td><td>21.5</td><td>28.7</td>
+                  <td>12.1</td><td>16.2</td><td>16.8</td><td>20.9</td>
+                  <td>14.5</td><td>23.9</td><td>29.9</td><td>34.7</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">MMC4-Core-ff</td>
+                  <td>-</td><td>2.1</td><td>10.1</td><td>10.2</td>
+                  <td>11.8</td><td>21.2</td><td>25.3</td><td>30.4</td>
+                  <td><strong>13.6</strong></td><td>18.7</td><td>18.8</td><td>22.1</td>
+                  <td><strong>16.1</strong></td><td>26.6</td><td>28.7</td><td>33.1</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">OBELICS</td>
+                  <td>-</td><td>2.8</td><td>3.0</td><td>16.4</td>
+                  <td><strong>13.0</strong></td><td><strong>31.7</strong></td><td>35.7</td><td>37.5</td>
+                  <td>9.2</td><td>26.5</td><td>30.2</td><td>32.2</td>
+                  <td>11.0</td><td>30.7</td><td>36.3</td><td>41.0</td>
+                </tr>
+                <tr style="background-color: #ECF4FF;">
+                  <td style="padding: 6px;">Textbook-6.5M</td>
+                  <td><strong>26.3</strong></td><td><strong>29.4</strong></td><td><strong>25.1</strong></td><td><strong>37.3</strong></td>
+                  <td>10.2</td><td>31.2</td><td><strong>36.8</strong></td><td><strong>39.9</strong></td>
+                  <td>11.8</td><td><strong>26.7</strong></td><td><strong>32.1</strong></td><td><strong>33.5</strong></td>
+                  <td>14.1</td><td><strong>33.1</strong></td><td><strong>36.4</strong></td><td><strong>42.8</strong></td>
+                </tr>
+                <tr style="border-top: 1pt solid black;">
+                  <th style="padding: 6px;">Dataset</th>
+                  <th colspan="4">MathVista</th>
+                  <th colspan="4">MathVision</th>
+                  <th colspan="4">MathVerse</th>
+                  <th colspan="4">Avg.</th>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">MMC4</td>
+                  <td>20.4</td><td>30.0</td><td>27.9</td><td>26.0</td>
+                  <td>12.2</td><td>21.3</td><td>15.5</td><td>16.1</td>
+                  <td>8.6</td><td>19.4</td><td>21.2</td><td><strong>15.9</strong></td>
+                  <td>10.9</td><td>19.4</td><td>19.5</td><td>21.9</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">MMC4-Core-ff</td>
+                  <td>22.5</td><td>33.0</td><td>29.2</td><td>27.8</td>
+                  <td>13.7</td><td>23.4</td><td>16.3</td><td>17.7</td>
+                  <td><strong>8.6</strong></td><td>19.9</td><td><strong>21.8</strong></td><td>15.2</td>
+                  <td>12.3</td><td>20.7</td><td>21.4</td><td>22.3</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">OBELICS</td>
+                  <td>21.6</td><td>28.5</td><td>31.1</td><td>27.6</td>
+                  <td>13.4</td><td>20.1</td><td>16.8</td><td>14.9</td>
+                  <td>6.9</td><td>19.4</td><td>20.7</td><td>14.0</td>
+                  <td>10.7</td><td>22.8</td><td>24.8</td><td>26.2</td>
+                </tr>
+                <tr style="background-color: #ECF4FF; border-bottom: 2pt solid black;">
+                  <td style="padding: 6px;">Textbook-6.5M</td>
+                  <td><strong>24.3</strong></td><td><strong>43.4</strong></td><td><strong>33.2</strong></td><td><strong>29.2</strong></td>
+                  <td><strong>14.5</strong></td><td><strong>25.6</strong></td><td><strong>18.2</strong></td><td><strong>18.1</strong></td>
+                  <td>7.7</td><td><strong>28.5</strong></td><td>19.8</td><td>14.6</td>
+                  <td><strong>15.5</strong></td><td><strong>31.1</strong></td><td><strong>28.8</strong></td><td><strong>30.8</strong></td>
+                </tr>
               </tbody>
-
             </table>
+            <p style="font-size: 0.9em; margin-top: 10px; font-style: italic;">We continued pre-training the base model of LLaVA-1.5-7B using different interleaved datasets. The results are evaluated on 4 common VQA and 3 math-related benchmarks under few-shot settings.</p>
           </div>
-        </div>
-      </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-          <h2 class="title is-3" style="font-size: 2rem !important;">Introduction</h2>
-          <div class="images_container_horizontal2">
-            <img src="static/images/examples/Table1.png" width="50%">
-            <div class="has-text-justified" style="font-size: 1.5rem !important;">
-              We identify that current LMMs have a significant gap compared to humans in understanding and visually
-              reasoning about abstract images, such as maps, charts, and layouts. Utilizing LLM and code, We design a
-              multimodal self-instruct strategy to synthesize a diverse set of abstract images and reasoning
-              instructions,
-              providing value data for LMMs. We synthesized a benchmark of 11,193 highquality abstract images, covering
-              eight common scenarios. Our benchmark reveals significant deficiencies even in advanced LMMs. Besides, we
-              synthesized 62,476 chart and road map instructions for fine-tuning, verifying the effectiveness of the
-              synthesized data.
-            </div>
+
+          <div class="content has-text-centered" style="margin-top: 30px;">
+            <table style="margin: 0 auto; border-collapse: collapse; font-size: 0.8em;">
+              <thead>
+                <tr style="border-top: 2pt solid black;">
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" rowspan="2">Dataset</th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="5">Continual Pre-training from Idefics2-8B-base</th>
+                  <th style="padding: 6px; border-bottom: 0.7pt solid black;" colspan="5">Pre-training Idefics2-8B from scratch</th>
+                </tr>
+                <tr style="border-bottom: 1pt solid black;">
+                  <th style="padding: 6px;">OKVQA</th>
+                  <th style="padding: 6px;">TextVQA</th>
+                  <th style="padding: 6px;">MathVista</th>
+                  <th style="padding: 6px;">MathVision</th>
+                  <th style="padding: 6px;">MathVerse</th>
+                  <th style="padding: 6px;">OKVQA</th>
+                  <th style="padding: 6px;">TextVQA</th>
+                  <th style="padding: 6px;">MathVista</th>
+                  <th style="padding: 6px;">MathVision</th>
+                  <th style="padding: 6px;">MathVerse</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 6px;">MMC4-cf</td>
+                  <td>54.1</td><td>57.7</td><td>27.8</td><td>14.0</td><td>17.3</td>
+                  <td>9.4</td><td>25.1</td><td>24.0</td><td>13.3</td><td>18.3</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">OBELICS</td>
+                  <td>54.6</td><td>57.5</td><td>27.6</td><td>14.3</td><td>17.5</td>
+                  <td><strong>10.5</strong></td><td>25.7</td><td>24.2</td><td>13.6</td><td>17.7</td>
+                </tr>
+                <tr style="background-color: #ECF4FF; border-bottom: 2pt solid rgb(0, 0, 0);">
+                  <td style="padding: 6px;">Textbook-6.5M</td>
+                  <td><strong>55.1</strong></td><td><strong>58.2</strong></td><td><strong>29.7</strong></td><td><strong>16.2</strong></td><td><strong>19.4</strong></td>
+                  <td>10.1</td><td><strong>26.8</strong></td><td><strong>26.1</strong></td><td><strong>14.4</strong></td><td><strong>19.8</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 0.9em; margin-top: 10px; font-style: italic;">Except for LLaVA, we also pre-train advanced VLMs with multi-image ability (Idefics): continual pretraining from Idefics-8B-base or pre-training from scratch. The evaluations are extended to an 8-shot using randomly selected examples as previous works.</p>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Approach Overview</h2>
-          <div class="content has-text-justified">
-            Our multi-modal self-instruct is an LLM-driven data synthesis strategy capable of producing abstract images
-            and aligned reasoning instructions for various daily scenarios, including road maps, dashboards, 2D planar
-            layouts, charts, relation graphs, flowcharts, and visual puzzles.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-full">
-          <img src="static/images/examples/Data.jpg" width="90%">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-          <div class="content has-text-justified">
-            Firstly, our strategy can autonomously propose a creative idea for visual scenarios, e.g., using a
-            step-by-step flowchart to demonstrate how to attend an academy conference or designing road map . Then
-            it
-            generates detailed code to visualize this idea. After synthesizing the desired image, LLMs self-instruct
-            multiple high-quality Q&A pairs for this visual content. The entire process is fully completed by the
-            LLM
-            with a few demonstrations.
-
-          </div>
-          <div class="content has-text-justified">
-            We illustrate the entire process of our image-text synthesis, including using road maps for navigation,
-            interpreting pie charts, solving visual puzzles, and using operating workflow. For each scenario, we
-            synthesize multiple questions, annotated answers, and rationales. For example, in the pie chart case,
-            the
-            LLM designs a multi-step math question about the difference between the largest and smallest categories.
-          </div>
-        </div>
-      </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <!-- <div class="column is-full-width has-text-centered"> -->
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Fine-Turning Result</h2>
-          <div class="content has-text-justified">
-            In addition to constructing the benchmark, we fine-tuned the Llava-1.5-7B model using the training sets from
-            chart, table, and map tasks, and compared its performance with other baselines
-          </div>
-          <img src="static/images/examples/Table2.png" width="50%">
-          <div class="content has-text-justified">
-            We evaluate whether Llava-our-62k can generalize to other benchmarks, especially the tasks with significant
-            differences. These results show that our model can generalize to other types of visual reasoning tasks,
-            rather than merely fitting to the training scenarios.
-          </div>
-          <img src="static/images/examples/Table4.png" width="100%">
-        </div>
-  </section>
+  
 
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <!-- <div class="column is-full-width has-text-centered"> -->
         <div class="column is-full-width">
-          <h2 class="title is-3">Case Study</h2>
+          <h2 class="title is-3">Exploring Multimodal Textbook</h2>
           <div class="column is-full has-text-centered content">
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
 
+
+
+  
   <section class="section">
-    <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
-      <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
-          <div class="box m-5">
-            <div class="content has-text-centered ">
-              <div class="images_container_horizontal">
-                <div class="images_container_vertical">
-                  <img src="static/images/examples/Case1.png" width="100%" />
-                </div>
-              </div>
-            </div>
+    <div class="container" style="margin-top: -100px; margin-bottom: -100px;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>We synthesize knowledge taxonomy with 3915 knowledge points across 6 subjects, which enabled us to automatically collect 159k English instructional videos based on this taxonomy. Following our video-to-textbook pipeline, we filter 53% low-quality or repetitive videos and retain 75k videos (22,697 class hours) with an average duration of 18 minutes. Then we extract 6.5M keyframes and 0.75B text (ASR+OCR) tokens from these videos. We produce a total of 610K interleaved samples. Each sample contains an average of 10.7 keyframes and 1,297 text tokens. The detailed statistics for each subject is as follows:</p>
           </div>
-          <div class="box m-5">
-            <div class="content has-text-centered ">
-              <div class="images_container_horizontal">
-                <div class="images_container_vertical">
-                  <img src="static/images/examples/Case2.png" width="100%" />
-                </div>
-              </div>
-            </div>
+          <div class="content has-text-centered">
+            <table style="margin: 0 auto; border-collapse: collapse; font-size: 0.9em;">
+              <thead>
+                <tr style="border-top: 1px solid black; border-bottom: 1px solid black;">
+                  <th style="padding: 8px;">Textbook Subject</th>
+                  <th style="padding: 8px;">#Video</th>
+                  <th style="padding: 8px;">Duration (h)</th>
+                  <th style="padding: 8px;">#Topic</th>
+                  <th style="padding: 8px;">#Video Clip</th>
+                  <th style="padding: 8px;">#Keyframe</th>
+                  <th style="padding: 8px;">#ASR Token</th>
+                  <th style="padding: 8px;">#OCR Token</th>
+                  <th style="padding: 8px;">#Sample</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px;">Mathematics</td>
+                  <td style="padding: 8px;">21.7k</td>
+                  <td style="padding: 8px;">4,423</td>
+                  <td style="padding: 8px;">725</td>
+                  <td style="padding: 8px;">809k</td>
+                  <td style="padding: 8px;">1.67M</td>
+                  <td style="padding: 8px;">72.5M</td>
+                  <td style="padding: 8px;">145M</td>
+                  <td style="padding: 8px;">123k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">Physics</td>
+                  <td style="padding: 8px;">11k</td>
+                  <td style="padding: 8px;">3,511</td>
+                  <td style="padding: 8px;">530</td>
+                  <td style="padding: 8px;">822k</td>
+                  <td style="padding: 8px;">0.95M</td>
+                  <td style="padding: 8px;">36.7M</td>
+                  <td style="padding: 8px;">73.4M</td>
+                  <td style="padding: 8px;">119k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">Chemistry</td>
+                  <td style="padding: 8px;">4.5k</td>
+                  <td style="padding: 8px;">2,643</td>
+                  <td style="padding: 8px;">410</td>
+                  <td style="padding: 8px;">234k</td>
+                  <td style="padding: 8px;">0.49M</td>
+                  <td style="padding: 8px;">15M</td>
+                  <td style="padding: 8px;">30M</td>
+                  <td style="padding: 8px;">32k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">Earth Science</td>
+                  <td style="padding: 8px;">12k</td>
+                  <td style="padding: 8px;">3,670</td>
+                  <td style="padding: 8px;">520</td>
+                  <td style="padding: 8px;">640k</td>
+                  <td style="padding: 8px;">1.03M</td>
+                  <td style="padding: 8px;">40M</td>
+                  <td style="padding: 8px;">80M</td>
+                  <td style="padding: 8px;">88k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">Engineering</td>
+                  <td style="padding: 8px;">13k</td>
+                  <td style="padding: 8px;">4,096</td>
+                  <td style="padding: 8px;">810</td>
+                  <td style="padding: 8px;">713k</td>
+                  <td style="padding: 8px;">1.15M</td>
+                  <td style="padding: 8px;">43.3M</td>
+                  <td style="padding: 8px;">86.6M</td>
+                  <td style="padding: 8px;">98k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px;">Computer Science</td>
+                  <td style="padding: 8px;">12.8k</td>
+                  <td style="padding: 8px;">4,354</td>
+                  <td style="padding: 8px;">820</td>
+                  <td style="padding: 8px;">782k</td>
+                  <td style="padding: 8px;">1.21M</td>
+                  <td style="padding: 8px;">42.8M</td>
+                  <td style="padding: 8px;">85.5M</td>
+                  <td style="padding: 8px;">150k</td>
+                </tr>
+                <tr style="border-top: 1px solid black; border-bottom: 1px solid black; font-weight: bold;">
+                  <td style="padding: 8px;">All</td>
+                  <td style="padding: 8px;">75k</td>
+                  <td style="padding: 8px;">22,697</td>
+                  <td style="padding: 8px;">3,915</td>
+                  <td style="padding: 8px;">4M</td>
+                  <td style="padding: 8px;">6.58M</td>
+                  <td style="padding: 8px;">258M</td>
+                  <td style="padding: 8px;">500M</td>
+                  <td style="padding: 8px;">610k</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 0.9em; margin-top: 10px; font-style: italic;">The statistics of our multimodal textbook.</p>
           </div>
-          <div class="box m-5">
-            <div class="content has-text-centered ">
-              <div class="images_container_horizontal">
-                <div class="images_container_vertical">
-                  <img src="static/images/examples/Case3.png" width="100%" />
-                </div>
+
+          <div id="results-carousel" class="carousel results-carousel" data-autoplay="true" data-autoplay-speed="2000">
+            
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p>The <strong>Earth science textbook</strong> explores fields such as geology, meteorology, and oceanography through combinations of theoretical diagrams and actual images.</p>
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/images/earch.png" alt="Chemistry Example" width="100%" />
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/earth.png" alt="Earth Science Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
               </div>
             </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered ">
-              <div class="images_container_horizontal">
-                <div class="images_container_vertical">
-                  <img src="static/images/examples/Case4.png" width="100%" />
-                  <img src="static/images/examples/Case42.png" width="60%" />
+            
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p>In <strong>chemistry</strong> domain, our textbooks cover a wide range of knowledge from basic chemical reactions to complex molecular structures. Through detailed experimental demonstrations and theoretical explanations, our textbook can help VLMs  deeply understand chemical principles.</p>
+                <div class="content has-text-centered">
+                  <img src="static/images/chemics.png" alt="Chemistry Example" width="100%" />
                 </div>
               </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/chemics.png" alt="Chemistry Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
+              </div>
             </div>
+
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p><strong>Computer science textbook</strong> cover core contents such as programming fundamentals, data structures, and algorithm analysis. Through animations and code examples, abstract concepts become more concrete and easy to understand for VLMs.</p>
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/images/cs.png" alt="Chemistry Example" width="100%" />
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/cs.png" alt="Computer Science Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
+              </div>
+            </div>
+
+
+
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p>The <strong>mathematics textbook</strong> systematically introduces important concepts from elementary mathematics to advanced mathematics. Through step-by-step, image-text interleaved derivation processes and intuitive geometric figures, it helps VLMs master mathematical thinking.</p>
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/images/math.png" alt="Chemistry Example" width="100%" />
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/math.png" alt="Mathematics Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
+              </div>
+            </div>
+
+
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p>The <strong>physics textbook</strong> mainly focuses on mechanics and thermodynamics knowledge. Through vivid demonstrations and tutorial texts, it enables VLMs to understand physical laws and natural phenomena.</p>
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/images/physics.png" alt="Chemistry Example" width="100%" />
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/physic1.png" alt="Physics Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
+              </div>
+            </div>
+
+
+            <div class="box m-5" style="background-color: #f5f5f5; border: 2px solid #dbdbdb;">
+              <div class="content has-text-justified">
+                <p>The <strong>physics textbook</strong> mainly focuses on mechanics and thermodynamics knowledge. Through vivid demonstrations and tutorial texts, it enables VLMs to understand physical laws and natural phenomena.</p>
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/images/physics.png" alt="Chemistry Example" width="100%" />
+              </div>
+              <div class="content has-text-centered">
+                <img src="static/examples/physis2.png" alt="Physics Textbook" width="100%" />
+              </div>
+              <div class="has-text-justified">
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
